@@ -42,10 +42,10 @@ np.save("data/processed/texture_labels.npy", y_texture)
 
 print("✔️ Fitur tekstur berhasil disimpan.")
 
-from feature_extraction.extract_features import extract_combined_features
+from features.combined import extract_combined_features
 import pickle
 
-# Ekstraksi fitur gabungan warna dan tekstur
+# Ekstraksi fitur gabungan warna + tekstur + frekuensi
 real_comb, real_label = extract_combined_features(
     "data/processed/real_images.npy",
     "data/processed/real_labels.npy"
@@ -62,4 +62,4 @@ y_combined = np.hstack((real_label, ai_label))
 with open("data/processed/features_labels.pkl", "wb") as f:
     pickle.dump((X_combined, y_combined), f)
 
-print("✔️ Fitur gabungan warna + tekstur berhasil disimpan ke features_labels.pkl.")
+print("✔️ Fitur gabungan warna + tekstur + frekuensi berhasil disimpan ke features_labels.pkl.")

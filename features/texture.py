@@ -5,6 +5,7 @@ from skimage.util import img_as_ubyte
 
 def extract_lbp_features(image, P=8, R=1):
     gray = rgb2gray(image)
+    gray = img_as_ubyte(gray)
     lbp = local_binary_pattern(gray, P, R, method='uniform')
     (hist, _) = np.histogram(lbp.ravel(),
                              bins=np.arange(0, P + 3),
