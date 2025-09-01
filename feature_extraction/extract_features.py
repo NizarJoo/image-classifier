@@ -6,7 +6,7 @@ from skimage.feature import graycomatrix, graycoprops
 from skimage.color import rgb2gray
 from PIL import Image
 import os
-import pandas as pd
+# import pandas as pd
 
 def extract_color_features(image):
     image = np.array(image)
